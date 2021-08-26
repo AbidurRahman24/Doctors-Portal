@@ -7,7 +7,7 @@ const TestimonialsDetails = ({ testimonial }) => {
             <div className='d-flex align-items-center '>
                 <img style={{ height: '50px' }} src={testimonial.img} alt="" />
                 <div className='m-3'>
-                    <h6>{testimonial.name}</h6>
+                    <h6 style={{color: '#1CC7C1'}}>{testimonial.name}</h6>
                     <small>{testimonial.address}</small>
                 </div>
             </div>

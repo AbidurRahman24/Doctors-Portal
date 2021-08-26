@@ -12,7 +12,7 @@ const testInfo = [
         address: 'california'
     },
     {
-        details: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam vitae quas molestiae dolores repudiandae ad unde neque veritatis, magnam quidem architecto sequi repellendus voluptates temporibus accusantium, incidunt distinctio. Ut, laboriosam',
+        details: 'Lorem ipsum dolor sit amet elit. Aliquam vitae quas molestiae dolores repudiandae ad unde neque veritatis, magnam quidem architecto sequi repellendus voluptates temporibus accusantium, incidunt distinctio. Ut, laboriosam',
         img: doctor2,
         name: 'Robinson',
         address: 'california'
@@ -29,16 +29,16 @@ const Testimonial = () => {
     return (
         <section className="testimonial-container my-5 py-5">
             <div className="text-center">
-                <h5 style={{color: '#1CC7C1'}}>TESTIMONIAL</h5>
+                <h5 style={{ color: '#1CC7C1' }}>TESTIMONIAL</h5>
                 <h2>What's Our Patients Says</h2>
             </div>
             <div className="d-flex justify-content-center">
-            <div className="w-75 row mt-5 pt-5">
-                {
-                    testInfo.map(testimonial => <TestimonialsDetails testimonial={testimonial} key={testimonial.name}></TestimonialsDetails>)
-                }
+                <div className="w-75 row mt-5 pt-5">
+                    {
+                        testInfo.map(testimonial => <TestimonialsDetails testimonial={testimonial} key={testimonial.name}></TestimonialsDetails>)
+                    }
+                </div>
             </div>
-        </div>
         </section>
     );
 };
