@@ -13,9 +13,6 @@
     opacity: .9;
     z-index: -1;
 }
-input{
-    padding: 25px;
-}
 .contact-button{
     padding: 15px 100px;
 }
