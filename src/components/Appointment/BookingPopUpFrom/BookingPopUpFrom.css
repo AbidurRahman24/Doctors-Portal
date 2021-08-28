@@ -1,0 +1,9 @@
+.from-container{
+    width: 100%;
+}
+.form-group.text-right {
+    float: right;
+}
+button.btn.btn-primary.send-button {
+    padding: 7px 45px;
+}

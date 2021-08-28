@@ -27,6 +27,7 @@ const BookingCard = ({booking, seletedDate}) => {
                         </button>
                     {/* <AppointmentForm modalIsOpen={modalIsOpen} appointmentOn={booking.subject} closeModal={closeModal} date={seletedDate}></AppointmentForm> */}
                     <BookingPopUpFrom modalIsOpen={modalIsOpen} closeModal={closeModal} 
+                    seletedDate={seletedDate}
                     appointmentOn={booking.subject}
                     ></BookingPopUpFrom>
                 </div>

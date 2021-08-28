@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { useForm } from "react-hook-form";
+import './BookingPopUpFrom.css'
 
 const customStyles = {
     content: {
@@ -8,6 +9,7 @@ const customStyles = {
         left: '50%',
         right: 'auto',
         bottom: 'auto',
+        width: '50%',
         marginRight: '-50%',
         transform: 'translate(-50%, -50%)',
     },
@@ -15,9 +17,12 @@ const customStyles = {
 
 Modal.setAppElement('#root');
 
-const BookingPopUpFrom = ({ modalIsOpen, closeModal, appointmentOn }) => {
+const BookingPopUpFrom = ({ modalIsOpen, closeModal, appointmentOn,seletedDate }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        console.log(data)
+        closeModal()
+    };
 
     return (
         <div>
@@ -28,20 +33,63 @@ const BookingPopUpFrom = ({ modalIsOpen, closeModal, appointmentOn }) => {
                 style={customStyles}
                 contentLabel="Example Modal"
             >
-                <h2 style={{ color: '#1CC7C1' }}>{appointmentOn}</h2>
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    {/* register your input into the hook by invoking the "register" function */}
-                    <input defaultValue="test" {...register("example")} />
+                <h2 className='text-center' style={{ color: '#1CC7C1' }}>{appointmentOn}</h2>
+                <p className='text-center' style={{ color: '#1CC7C1' }}>{seletedDate.toDateString()}</p>
 
-                    {/* include validation with required or other standard HTML validation rules */}
-                    <input {...register("exampleRequired", { required: true })} />
-                    {/* errors will return when field validation fails  */}
-                    {errors.exampleRequired && <span>This field is required</span>}
+                <form onSubmit={handleSubmit(onSubmit)} className=' m-5'>
 
-                    <input type="submit" />
+                    <div class="form-group">
+                        <label >Name</label>
+                        <br />
+                        <input className='from-control from-container' {...register("name", { required: true })} />
+                        {errors.name && <span>This field is required</span>}
+                    </div>
+                    <br />
+
+                    <div class="form-group ">
+                        <label >Email</label>
+                        <br />
+                        <input className='from-control from-container' {...register("email", { required: true })} />
+                        {errors.email && <span>This field is required</span>}
+                    </div>
+                    <br />
+
+                    <div class="form-group ">
+                        <label >Phone</label>
+                        <br />
+                        <input className='from-control from-container' {...register("email", { required: true })} />
+                        {errors.email && <span>This field is required</span>}
+                    </div>
+                    <br />
+
+                    <div className="form-group row">
+                        <div className="col-4">
+
+                            <select className="form-control" name="gender" {...register("gender", { required: true })} >
+                                <option disabled={true} value="Not set">Select Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Not set">Other</option>
+                            </select>
+                            {errors.gender && <span className="text-danger">This field is required</span>}
+
+                        </div>
+                        <div className="col-4">
+                        <input className='from-control from-container' {...register("age", { required: true })} name="age" placeholder="Your age" type="number" />
+                        {errors.age && <span>This field is required</span>}
+                        </div>
+                        <div className="col-4">
+                        <input className='from-control from-container' {...register("wight", { required: true })} name="wight" placeholder="Your wight" type="number" />
+                        {errors.wight && <span>This field is required</span>}
+                        </div>
+                    </div>
+
+                    <div className="form-group text-right">
+                        <button type="submit" className="btn btn-primary send-button">Send</button>
+                    </div>
                 </form>
             </Modal>
-        </div>
+        </div >
     );
 };
 
