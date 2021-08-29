@@ -5,6 +5,7 @@ import {
   Route,
 } from "react-router-dom";
 import Appoinment from "./components/Appointment/Appointment/Appoinment";
+import AllPatients from "./components/Deshboard/AllPatients/AllPatients";
 import Deshboard from "./components/Deshboard/Deshboard/Deshboard";
 import Home from "./components/Home/Home/Home";
 
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route path='/appoinment'>
             <Appoinment></Appoinment>
+          </Route>
+          <Route path=''>
+            <AllPatients></AllPatients>
           </Route>
         </Switch>
       </Router>
