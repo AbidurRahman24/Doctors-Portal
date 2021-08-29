@@ -20,8 +20,19 @@ Modal.setAppElement('#root');
 const BookingPopUpFrom = ({ modalIsOpen, closeModal, appointmentOn,seletedDate }) => {
     const { register, handleSubmit, formState: { errors } } = useForm();
     const onSubmit = data => {
-        console.log(data)
-        closeModal()
+        data.service = appointmentOn;
+        data.date = seletedDate;
+        data.created = new Date();
+        
+        fetch('http://localhost:5000/addAppointment', {
+            method: 'POST',
+            headers: { 'content-type': 'application/json' },
+            body: JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(success => {
+            closeModal()
+        })
     };
 
     return (
@@ -57,8 +68,8 @@ const BookingPopUpFrom = ({ modalIsOpen, closeModal, appointmentOn,seletedDate }
                     <div class="form-group ">
                         <label >Phone</label>
                         <br />
-                        <input className='from-control from-container' {...register("email", { required: true })} />
-                        {errors.email && <span>This field is required</span>}
+                        <input className='from-control from-container' {...register("phone", { required: true })} />
+                        {errors.phone && <span>This field is required</span>}
                     </div>
                     <br />
 
