@@ -2,7 +2,7 @@ import React from 'react';
 import './Sitebar.css'
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCog, faSignOutAlt, faCalendar, faGripHorizontal, faUsers } from '@fortawesome/free-solid-svg-icons';
+import { faCog, faSignOutAlt, faCalendar, faGripHorizontal, faUsers, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import {  faFileAlt } from '@fortawesome/free-regular-svg-icons'
 
 const Sitebar = () => {
@@ -32,6 +32,11 @@ const Sitebar = () => {
                 <li>
                     <Link to="/doctor/setting" className="text-white" >
                       <FontAwesomeIcon icon={faCog} /> <span>Setting</span>
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/deshboard/addDoctors" className="text-white" >
+                      <FontAwesomeIcon icon={faUserPlus} /> <span>Add Doctors</span>
                     </Link>
                 </li>
             </ul>
