@@ -5,7 +5,7 @@ import Sitebar from '../Sitebar/Sitebar';
 const AllPatients = () => {
     const [appointments, setAppointments] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/appointments')
+        fetch('https://morning-ravine-21847.herokuapp.com/appointments')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

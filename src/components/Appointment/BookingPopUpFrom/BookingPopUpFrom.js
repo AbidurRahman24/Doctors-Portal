@@ -24,7 +24,7 @@ const BookingPopUpFrom = ({ modalIsOpen, closeModal, appointmentOn,seletedDate }
         data.date = seletedDate;
         data.created = new Date();
         
-        fetch('http://localhost:5000/addAppointment', {
+        fetch('https://morning-ravine-21847.herokuapp.com/addAppointment', {
             method: 'POST',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)
