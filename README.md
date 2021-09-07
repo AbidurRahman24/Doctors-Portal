@@ -1,5 +1,6 @@
 # Doctor's Portal
-A Single page web app with dashboard where people can pick the date and time and fix an appointment. A doctor can review his appointments and prescribe medicine to a Patient from his dashboard.
+A Single page web app with dashboard where people can pick the date and time and fix an appointment. A doctor can review his appointments and prescribe medicine to a Patient from his dashboard. 
+</br>
 <a href="https://doctors-portal-e60bb.web.app/">Live Website</a> | <a href="https://morning-ravine-21847.herokuapp.com/">Live API Server</a>
 
 # Features
