@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import DoctorsDetails from '../DoctorsDetails/DoctorsDetails';
-import doctor from '../../../images/Doctor.png'
 
 const Doctors = () => {
     const [doctorData, setDoctorData] = useState([])
@@ -9,7 +8,7 @@ const Doctors = () => {
         .then(res => res.json())
         .then(data => {
             // console.log(data[0]);
-            setDoctorData(data[0])
+            setDoctorData(data)
         })
     }, [])
     return (
@@ -18,9 +17,8 @@ const Doctors = () => {
                 <h5 className="text-center  text-primary mb-5">Our Doctors</h5>
                 <div className="row">
                     {
-                        doctorData.map(doctor =><DoctorsDetails key={doctor._id} doctor={doctor} />)
+                        doctorData.map(doctor => <DoctorsDetails doctor={doctor}></DoctorsDetails>)
                     }
-                    
                 </div>
             </div>
         </section>
